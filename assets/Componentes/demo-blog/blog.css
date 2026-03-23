@@ -1,0 +1,285 @@
+/* =========================================
+   EDITORIAL BLOG THEME (Creator Economy)
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;700&display=swap');
+
+:root {
+  --bl-bg: #fdfdfc;
+  --bl-surface: #ffffff;
+  --bl-text-main: #111111;
+  --bl-text-muted: #555555;
+  --bl-accent: #ff3366; /* Creator Pink/Red */
+  --bl-accent-hover: #e02855;
+  --bl-ad-bg: #0a0a0a;
+  --bl-ad-text: #ffffff;
+  --bl-border: #eaeaea;
+  
+  --bl-sans: 'Inter', -apple-system, sans-serif;
+  --bl-serif: 'Playfair Display', Georgia, serif;
+}
+
+body.blog-theme {
+  background-color: var(--bl-bg);
+  color: var(--bl-text-main);
+  font-family: var(--bl-sans);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* =======================================
+   READING PROGRESS BAR
+   ======================================= */
+.bl-progress-container {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 4px;
+  background: transparent;
+  z-index: 1000;
+}
+.bl-progress-bar {
+  height: 100%;
+  background: var(--bl-accent);
+  width: 0%;
+  transition: width 0.1s;
+}
+
+/* =======================================
+   NAVBAR MINIMALISTA
+   ======================================= */
+.bl-nav {
+  position: fixed;
+  top: 4px; left: 0; width: 100%;
+  background: rgba(253,253,252,0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--bl-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  box-sizing: border-box;
+  z-index: 999;
+  transition: transform 0.3s;
+}
+.bl-nav.hide { transform: translateY(-100%); }
+
+.bl-logo {
+  font-family: var(--bl-serif);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--bl-text-main);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+.bl-logo span { color: var(--bl-accent); }
+
+.bl-back-btn {
+  font-family: var(--bl-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--bl-text-muted);
+  border: 1px solid var(--bl-border);
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+.bl-back-btn:hover { background: var(--bl-text-main); color: white; border-color: var(--bl-text-main); }
+
+/* =======================================
+   HERO EDITORIAL
+   ======================================= */
+.bl-hero {
+  padding: 120px 5% 50px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+.bl-category {
+  color: var(--bl-accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+  display: block;
+}
+.bl-title {
+  font-family: var(--bl-serif);
+  font-size: 3.5rem;
+  line-height: 1.1;
+  margin: 0 0 20px 0;
+  color: var(--bl-text-main);
+}
+.bl-subtitle {
+  font-size: 1.2rem;
+  color: var(--bl-text-muted);
+  font-weight: 400;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+.bl-author-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-size: 0.9rem;
+}
+.bl-author-img { width: 40px; height: 40px; border-radius: 50%; background: var(--bl-text-main); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+
+/* Hero Cover Image */
+.bl-cover-wrapper {
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  padding: 0 5%;
+}
+.bl-cover {
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* =======================================
+   ARTICLE CONTENT (Typography Focus)
+   ======================================= */
+.bl-article {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 5% 80px;
+}
+.bl-article p {
+  font-family: var(--bl-serif);
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: #222;
+  margin-bottom: 30px;
+}
+/* Drop Cap */
+.bl-drop-cap::first-letter {
+  font-family: var(--bl-serif);
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 0.8;
+  float: left;
+  margin: 0.1em 0.15em 0 0;
+  color: var(--bl-accent);
+}
+
+.bl-article h2 {
+  font-family: var(--bl-sans);
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 50px 0 20px;
+  letter-spacing: -0.5px;
+  color: var(--bl-text-main);
+}
+.bl-article h3 {
+  font-family: var(--bl-sans);
+  font-size: 1.3rem;
+  margin: 30px 0 15px;
+}
+.bl-article ul {
+  font-family: var(--bl-serif);
+  font-size: 1.25rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  padding-left: 20px;
+}
+.bl-article li { margin-bottom: 15px; }
+.bl-article strong { font-family: var(--bl-sans); font-weight: 700; color: var(--bl-text-main); }
+
+/* Injecting Images within content */
+.bl-inline-media {
+  width: 100%;
+  border-radius: 8px;
+  margin: 40px 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* =======================================
+   INTERACTIVE ADVERTISEMENT (Pauta)
+   ======================================= */
+.bl-ad-banner {
+  background: var(--bl-ad-bg);
+  color: var(--bl-ad-text);
+  padding: 50px;
+  margin: 60px 0;
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+.bl-ad-banner::before {
+  content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+  background: radial-gradient(circle, rgba(255,51,102,0.15) 0%, transparent 60%);
+  animation: pulseRotate 10s linear infinite;
+  pointer-events: none;
+}
+@keyframes pulseRotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+.bl-ad-tag { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--bl-accent); margin-bottom: 15px; display: block; }
+.bl-ad-title { font-family: var(--bl-serif); font-size: 2.2rem; margin: 0 0 15px 0; }
+.bl-ad-copy { font-family: var(--bl-sans); font-size: 1.1rem; color: #aaa; margin: 0 auto 30px; max-width: 500px; }
+.bl-ad-btn {
+  display: inline-block; background: var(--bl-accent); color: white;
+  padding: 15px 35px; font-weight: 700; text-decoration: none;
+  font-family: var(--bl-sans); border-radius: 50px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative; z-index: 2;
+}
+.bl-ad-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255,51,102,0.4); }
+
+/* =======================================
+   AUDIOVISUAL HOOK (Video Player)
+   ======================================= */
+.bl-video-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 50px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+  background: #000;
+}
+.bl-video-wrapper::before {
+  content: "▶ REPRODUCIR AUDIT VISUAL";
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  color: white; font-family: var(--bl-sans); font-weight: 700; font-size: 1.2rem;
+  z-index: 2; pointer-events: none;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  background: rgba(255,51,102,0.9); padding: 15px 30px; border-radius: 50px;
+}
+.bl-video-wrapper video {
+  width: 100%; height: 400px; object-fit: cover; opacity: 0.6;
+  transition: opacity 0.3s;
+}
+.bl-video-wrapper:hover video { opacity: 0.9; cursor: pointer; }
+.bl-video-wrapper:hover::before { display: none; }
+
+/* =======================================
+   FOOTER AUTHOR PITCH
+   ======================================= */
+.bl-author-box {
+  background: #f1f3f5;
+  padding: 40px;
+  border-radius: 8px;
+  margin-top: 60px;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.bl-author-box img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; }
+.bl-author-box-content h4 { font-family: var(--bl-sans); font-size: 1.4rem; margin: 0 0 10px 0; }
+.bl-author-box-content p { font-family: var(--bl-sans); font-size: 1rem; color: var(--bl-text-muted); margin: 0; line-height: 1.5; }
+
+/* Responsive */
+@media(max-width: 768px) {
+  .bl-title { font-size: 2.2rem; }
+  .bl-cover { height: 40vh; }
+  .bl-article p { font-size: 1.1rem; }
+  .bl-ad-banner { padding: 30px 20px; }
+  .bl-author-box { flex-direction: column; text-align: center; }
+}

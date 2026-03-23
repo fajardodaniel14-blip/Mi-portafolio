@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DF Fintech Hub | Institutional Workspace</title>
+  <meta name="description" content="Entorno B2B Fintech con gráficos en vivo, Track Record Qualitativo y Meta Calendario Económico.">
+
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="assets/componentes/demo-fintech/fintech.css">
+</head>
+<body class="fintech-theme">
+
+  <!-- TICKER TAPE (Live Market Prices API) -->
+  <div class="fx-ticker-wrapper">
+    <!-- TradingView Widget BEGIN -->
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+      {
+      "symbols": [
+        { "proName": "FOREXCOM:SPXUSD", "title": "S&P 500" },
+        { "proName": "FOREXCOM:NSXUSD", "title": "Nasdaq 100" },
+        { "proName": "BINANCE:BTCUSDT", "title": "Bitcoin" },
+        { "proName": "BINANCE:ETHUSDT", "title": "Ethereum" },
+        { "proName": "FX:EURUSD", "title": "EUR/USD" },
+        { "proName": "FX:GBPUSD", "title": "GBP/USD" },
+        { "proName": "OANDA:XAUUSD", "title": "Gold" }
+      ],
+      "showSymbolLogo": true,
+      "colorTheme": "dark",
+      "isTransparent": true,
+      "displayMode": "adaptive",
+      "locale": "es"
+    }
+      </script>
+    </div>
+    <!-- TradingView Widget END -->
+  </div>
+
+  <!-- NAVBAR INSTITUCIONAL -->
+  <nav class="fx-nav">
+    <div style="display:flex; align-items:center; gap:40px;">
+      <a href="index.html" class="fx-logo">DF<span>Capital</span></a>
+      <div class="fx-nav-links">
+        <a href="#" class="active">Mercados</a>
+        <a href="#">Track Record (Myfxbook)</a>
+        <a href="#">Noticias Macro</a>
+        <a href="#">Fondos PAMM</a>
+      </div>
+    </div>
+    <div class="fx-nav-actions">
+      <a href="portafolio.html" style="color:var(--fx-text-muted); font-size:14px; margin-right:20px; text-decoration:none;">← Volver al Portafolio</a>
+      <button class="fx-btn fx-btn-outline">Iniciar Sesión</button>
+      <button class="fx-btn fx-btn-primary">Abrir Cuenta Real</button>
+    </div>
+  </nav>
+
+  <div class="fx-container">
+    
+    <!-- COLUMNA IZQUIERDA (Gráfico & Workspace) -->
+    <div style="display:flex; flex-direction:column; gap:24px;">
+      
+      <!-- GRÁFICO EN VIVO (TradingView Advanced) -->
+      <section class="fx-panel">
+        <div class="fx-panel-header">
+          Terminal Gráfico Profesional
+          <span style="font-size:12px; color:var(--fx-primary); display:flex; align-items:center; gap:5px;">
+            <span style="width:8px; height:8px; border-radius:50%; background:var(--fx-primary); display:inline-block; animation: blink 2s infinite;"></span> Mercados Abiertos
+          </span>
+        </div>
+        <div class="fx-chart-wrapper">
+          <!-- TradingView Widget BEGIN -->
+          <div class="tradingview-widget-container" style="height:100%;width:100%">
+            <div id="tradingview_df123" style="height:100%;width:100%"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+            <script type="text/javascript">
+            new TradingView.widget(
+            {
+            "autosize": true,
+            "symbol": "BTCUSDT",
+            "interval": "60",
+            "timezone": "Etc/UTC",
+            "theme": "dark",
+            "style": "1",
+            "locale": "es",
+            "enable_publishing": false,
+            "backgroundColor": "#0b0e11",
+            "gridColor": "#1f2937",
+            "hide_top_toolbar": false,
+            "hide_legend": false,
+            "save_image": false,
+            "container_id": "tradingview_df123"
+          }
+            );
+            </script>
+          </div>
+          <!-- TradingView Widget END -->
+        </div>
+      </section>
+
+      <!-- TRACK RECORD ANALISTA (MyFxBook clone) -->
+      <section class="fx-panel">
+        <div class="fx-panel-header">
+          Métricas de Analista Quant (Track Record Auditado)
+          <a href="#" style="color:var(--fx-text-muted); font-size:12px; text-decoration:none;">Actualizado Re-Time ^</a>
+        </div>
+        <div class="fx-panel-body">
+          <div class="fx-stats-grid">
+            <div class="fx-stat-box">
+              <span class="fx-stat-label">Ganancia Absoluta</span>
+              <span class="fx-stat-value up">+412.85%</span>
+            </div>
+            <div class="fx-stat-box">
+              <span class="fx-stat-label">Drawdown Máx.</span>
+              <span class="fx-stat-value down">-4.21%</span>
+            </div>
+            <div class="fx-stat-box">
+              <span class="fx-stat-label">Equidad (USD)</span>
+              <span class="fx-stat-value">$245,091</span>
+            </div>
+            <div class="fx-stat-box">
+              <span class="fx-stat-label">Win Rate</span>
+              <span class="fx-stat-value">68.4%</span>
+            </div>
+            
+            <!-- Curva de Equidad CSS -->
+            <div style="display:flex; flex-direction:column; gap:5px;">
+              <span class="fx-stat-label">Curva de Crecimiento (YTD)</span>
+              <div class="fx-equity-curve">
+                <div class="fx-equity-poly"></div>
+                <div class="fx-equity-line">
+                  <svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 100 100">
+                    <polyline points="0,100 20,70 40,40 60,50 80,20 100,10" fill="none" stroke="var(--fx-up)" stroke-width="2"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ANALISIS TECNICO BLOGS -->
+      <section class="fx-panel">
+        <div class="fx-panel-header">Fundamentos B2B & Análisis Institucional</div>
+        <div class="fx-blog-grid">
+          
+          <a href="#" class="fx-blog-card">
+            <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=400&auto=format&fit=crop" alt="Trading Desk" class="fx-blog-img">
+            <div class="fx-blog-content">
+              <h4 class="fx-blog-title">Correlación Oro & S&P 500 en escenarios de Alta Inflación (Q3 2026)</h4>
+              <div class="fx-blog-meta">
+                <span>Por Global Macro Desk</span>
+                <span>Hace 2 hrs</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="fx-blog-card">
+            <img src="https://images.unsplash.com/photo-1621504450181-5d356f61d307?q=80&w=400&auto=format&fit=crop" alt="Crypto Chart" class="fx-blog-img">
+            <div class="fx-blog-content">
+              <h4 class="fx-blog-title">La ruptura del Rango de Liquidez Institucional en Ethereum: ¿Short Squeeze inminente?</h4>
+              <div class="fx-blog-meta">
+                <span>Por Crypto Operations</span>
+                <span>Hace 5 hrs</span>
+              </div>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+    </div>
+
+    <!-- COLUMNA DERECHA (Calendario Forex Factory) -->
+    <div style="display:flex; flex-direction:column;">
+      <section class="fx-panel" style="height: 100%;">
+        <div class="fx-panel-header">Calendario Económico (Impacto)</div>
+        <div class="fx-news-list" style="padding-top: 5px;">
+          
+          <div class="fx-news-item">
+            <div class="fx-news-time">08:30</div>
+            <div class="fx-news-impact"><svg viewBox="0 0 24 24" width="16" class="fx-impact-high" fill="currentColor"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg></div>
+            <div class="fx-news-currency">USD</div>
+            <div class="fx-news-title">Índice de Precios al Consumidor (IPC) m/m</div>
+            <div class="fx-news-actual fx-actual-up">0.4%</div>
+          </div>
+          
+          <div class="fx-news-item">
+            <div class="fx-news-time">10:00</div>
+            <div class="fx-news-impact"><svg viewBox="0 0 24 24" width="16" class="fx-impact-high" fill="currentColor"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg></div>
+            <div class="fx-news-currency">USD</div>
+            <div class="fx-news-title" style="font-weight:700;">Declaraciones de Powell (FED)</div>
+            <div class="fx-news-actual">--</div>
+          </div>
+
+          <div class="fx-news-item">
+            <div class="fx-news-time">11:15</div>
+            <div class="fx-news-impact"><svg viewBox="0 0 24 24" width="16" class="fx-impact-med" fill="currentColor"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg></div>
+            <div class="fx-news-currency">EUR</div>
+            <div class="fx-news-title">Tasa de Facilidad de Depósito (BCE)</div>
+            <div class="fx-news-actual fx-actual-down">3.75%</div>
+          </div>
+
+          <div class="fx-news-item">
+            <div class="fx-news-time">19:30</div>
+            <div class="fx-news-impact"><svg viewBox="0 0 24 24" width="16" class="fx-impact-high" fill="currentColor"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg></div>
+            <div class="fx-news-currency">AUD</div>
+            <div class="fx-news-title">Cambio del Empleo (Ene)</div>
+            <div class="fx-news-actual">26.5K</div>
+          </div>
+
+          <div style="padding: 20px; text-align:center;">
+             <a href="#" style="color:var(--fx-primary); font-size:13px; text-decoration:none; font-weight:600;">Cargar más eventos ↓</a>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+  </div>
+
+  <style>
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0.2; }
+      100% { opacity: 1; }
+    }
+  </style>
+</body>
+</html>

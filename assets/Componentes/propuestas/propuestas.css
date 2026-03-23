@@ -1,0 +1,200 @@
+/* Propuestas Especiales CSS (Dannaway Aesthetic) */
+.propuestas-hero {
+  padding: clamp(6rem, 15vh, 12rem) 0 4rem;
+  background-color: var(--color-bg-base);
+}
+
+.massive-title {
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.hero-subtitle {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* Base Layout for Proposals */
+.propuesta-section {
+  padding: clamp(4rem, 10vh, 8rem) 0;
+  position: relative;
+  background-color: var(--color-bg-base);
+  border-top: 1px solid rgba(255,255,255,0.03);
+}
+
+.propuesta-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .propuesta-layout {
+    flex-direction: row;
+    gap: 10%; /* Mucho blanco/whitespace */
+  }
+}
+
+.propuesta-content {
+  flex: 1;
+}
+
+.propuesta-visual {
+  flex: 1.2;
+  width: 100%;
+}
+
+.propuesta-id {
+  font-family: var(--font-family-mono);
+  color: var(--color-primary);
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-md);
+  display: block;
+}
+
+.propuesta-content h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: var(--spacing-md);
+  letter-spacing: -0.02em;
+}
+
+.propuesta-content p {
+  color: var(--color-text-secondary);
+  font-size: 1.125rem;
+  line-height: 1.7;
+  margin-bottom: var(--spacing-lg);
+}
+
+.tech-list {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin-bottom: var(--spacing-lg);
+}
+
+.tech-list li {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  font-family: var(--font-family-mono);
+  border-bottom: 1px solid var(--color-text-muted); /* Underline style */
+  padding-bottom: 2px;
+}
+
+.propuesta-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+  border: 1px solid var(--color-primary);
+}
+
+.btn-primary:hover {
+  background: var(--color-bg-base);
+  color: var(--color-primary);
+  box-shadow: 0 10px 30px -10px var(--color-primary-glow);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-text-secondary);
+  color: var(--color-text-primary);
+}
+
+/* Visual Mockups Large Borderless Style */
+.visual-wrapper {
+  background: #151520; /* Very deep dark */
+  aspect-ratio: 4/3;
+  border-radius: 20px; /* soft rounded */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 30px 60px -15px rgba(0,0,0,0.6); /* Diffuse shadow underneath */
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.propuesta-layout:hover .visual-wrapper {
+  transform: scale(1.02) translateY(-10px);
+}
+
+.visual-wrapper.accent {
+  background: linear-gradient(135deg, #1A1A2A 0%, #201525 100%);
+}
+
+.visual-wrapper.tech {
+  background: #0f172a; /*Slate 900*/
+}
+
+.placeholder-icon {
+  width: 120px;
+  height: 120px;
+  fill: var(--color-primary-glow);
+}
+
+/* Huge CTA at end */
+.huge-cta {
+  padding: clamp(6rem, 15vh, 12rem) 0;
+  text-align: center;
+  background: var(--color-bg-surface);
+}
+
+.huge-cta h2 {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  margin-bottom: 0;
+}
+
+.huge-cta p {
+  font-size: 1.25rem;
+  color: var(--color-text-secondary);
+  margin: var(--spacing-sm) 0 var(--spacing-xl);
+}
+
+.btn-massive {
+  background: var(--color-text-primary);
+  color: var(--color-bg-base);
+  font-size: 1.125rem;
+  padding: 1.25rem 3rem;
+  border-radius: var(--radius-full);
+}
+
+.btn-massive:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}

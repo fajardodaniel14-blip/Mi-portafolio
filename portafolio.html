@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio de Daniel Felipe Fajardo - Proyectos de desarrollo web, e-commerce, WordPress y más">
+  <meta name="keywords" content="portfolio, desarrollador web, HTML, CSS, JavaScript, proyectos">
+  <meta name="author" content="Daniel Felipe Fajardo">
+  
+  <title>Portfolio | Daniel Felipe Fajardo - Desarrollador Web</title>
+  
+  <!-- Google Fonts: Inter & JetBrains Mono for a tech vibe -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Preload -->
+  <link rel="preload" href="assets/css/variables.css" as="style">
+  <link rel="preload" href="assets/css/base.css" as="style">
+  <link rel="preload" href="assets/css/utilities.css" as="style">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
+  <link rel="stylesheet" href="assets/componentes/header/header.css">
+  <link rel="stylesheet" href="assets/componentes/hero/hero.css">
+  <link rel="stylesheet" href="assets/componentes/portafolio/portafolio.css">
+  <link rel="stylesheet" href="assets/componentes/reels/reels.css">
+  <link rel="stylesheet" href="assets/componentes/footer/footer.css">
+</head>
+<body class="theme-dark"> <!-- Added theme-dark hook if needed -->
+  <!-- Skip Link para Accesibilidad -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="container header__container">
+      <h1 class="header__logo">DANIEL FELIPE</h1>
+      
+      <button 
+        class="header__toggle" 
+        aria-expanded="false" 
+        aria-controls="header-nav"
+        aria-label="Alternar menú de navegación"
+      >
+        <span class="header__toggle-icon"></span>
+      </button>
+      
+      <nav class="header__nav" role="navigation" aria-label="Navegación principal" id="header-nav">
+        <ul class="header__menu">
+          <li class="header__menu-item"><a href="index.html" class="header__link">Inicio</a></li>
+          <li class="header__menu-item"><a href="servicios.html" class="header__link">Servicios</a></li>
+          <li class="header__menu-item"><a href="propuestas.html" class="header__link">Propuestas</a></li>
+          <li class="header__menu-item"><a href="portafolio.html" class="header__link" aria-current="page">Portfolio</a></li>
+          <li class="header__menu-item"><a href="contacto.html" class="header__link">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="hero-title" style="position: relative; overflow: hidden; min-height: 60vh; display: flex; align-items: center;">
+      <!-- WebGL Canvas for Van Holtz aesthetic -->
+      <canvas id="bg-3d" style="position: absolute; inset: 0; z-index: 0; pointer-events: none;"></canvas>
+      
+      <div class="container" style="position: relative; z-index: 10; pointer-events: none;">
+        <h1 id="hero-title" class="hero__title reveal" style="pointer-events: auto;">INNOVACIÓN DIGITAL</h1>
+        <p class="hero__subtitle reveal" style="transition-delay: 0.1s; pointer-events: auto;">Transformando ideas en experiencias interactivas de próxima generación</p>
+      </div>
+    </section>
+
+    <!-- Portfolio Filter -->
+    <section class="portfolio-filter reveal" style="transition-delay: 0.2s;" aria-label="Filtros de portfolio">
+      <div class="container">
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+          <button class="filter-btn" data-filter="wordpress">CMS / WordPress</button>
+          <button class="filter-btn" data-filter="webapp">Web Apps</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio-section" aria-labelledby="portfolio-title">
+      <div class="container">
+        <!-- Contenedor Grid -->
+        <div class="portfolio-grid" id="portfolio-grid">
+          
+          <!-- Proyecto 1: E-commerce Masivo -->
+          <article class="portfolio-card reveal" aria-labelledby="project-1-title" data-category="ecommerce">
+            <div class="portfolio-card__image-wrapper">
+              <div class="portfolio-card__image" role="img" aria-label="Vista previa de Arquitectura E-commerce B2B">
+                <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=600&auto=format&fit=crop" alt="E-Commerce B2B Global Market" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <div class="portfolio-card__overlay"></div>
+            </div>
+            <div class="portfolio-card__content">
+              <h3 id="project-1-title" class="portfolio-card__title">DF Global Market</h3>
+              <p class="portfolio-card__description">
+                Demo arquitectónica de Alta Densidad B2B enfocada en conversión pura (Estándares Amazon/JD.com y Alibaba).
+              </p>
+              <div class="portfolio-card__tags">
+                <span class="portfolio-card__tag">Pragmatic CSS</span>
+                <span class="portfolio-card__tag">Lighthouse 100</span>
+                <span class="portfolio-card__tag">Amazon UX</span>
+              </div>
+              <a href="demo-ecommerce.html" class="portfolio-card__link" aria-label="Lanzar Demo E-commerce de Conversión">
+                Lanzar Demo en Vivo <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Proyecto 2: Inmobiliaria -->
+          <article class="portfolio-card reveal" aria-labelledby="project-2-title" data-category="wordpress" style="transition-delay: 0.1s;">
+            <div class="portfolio-card__image-wrapper">
+              <div class="portfolio-card__image" role="img" aria-label="Vista previa de DF Luxury Real Estate">
+                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=600&auto=format&fit=crop" alt="Real Estate Luxury Background" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <div class="portfolio-card__overlay"></div>
+            </div>
+            <div class="portfolio-card__content">
+              <h3 id="project-2-title" class="portfolio-card__title">DF Luxury Real Estate</h3>
+              <p class="portfolio-card__description">
+                Landing page corporativa valuada en $1,500 USD con widgets flotantes inmersivos y embudo visual High-End.
+              </p>
+              <div class="portfolio-card__tags">
+                <span class="portfolio-card__tag">Vanilla HTML/CSS</span>
+                <span class="portfolio-card__tag">Lighhouse 100</span>
+                <span class="portfolio-card__tag">Lead Gen</span>
+              </div>
+              <a href="demo-inmobiliaria.html" class="portfolio-card__link" aria-label="Ver detalles del proyecto Inmobiliaria">
+                Lanzar Demo en Vivo <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Proyecto 3: B2B Enterprise Dashboard -->
+          <article class="portfolio-card reveal" aria-labelledby="project-3-title" data-category="webapp" style="transition-delay: 0.2s;">
+            <div class="portfolio-card__image-wrapper">
+              <div class="portfolio-card__image" role="img" aria-label="Vista previa de DF Nexus Dashboard">
+                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=600&auto=format&fit=crop" alt="Data Center NOC Dashboard" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <div class="portfolio-card__overlay"></div>
+            </div>
+            <div class="portfolio-card__content">
+              <h3 id="project-3-title" class="portfolio-card__title">DF Nexus Dashboard</h3>
+              <p class="portfolio-card__description">
+                Infraestructura NOC B2B de grado Enterprise. Monitorización en tiempo real de anomalías y estado topológico inspirado en Cisco.
+              </p>
+              <div class="portfolio-card__tags">
+                <span class="portfolio-card__tag">Vanilla HTML/CSS</span>
+                <span class="portfolio-card__tag">Data Center</span>
+                <span class="portfolio-card__tag">Enterprise</span>
+              </div>
+              <a href="demo-dashboard.html" class="portfolio-card__link" aria-label="Lanzar Demo Nexus Dashboard">
+                Lanzar Demo en Vivo <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Proyecto 4: Agencia SaaS -->
+          <article class="portfolio-card reveal" aria-labelledby="project-4-title" data-category="webapp">
+            <div class="portfolio-card__image-wrapper">
+              <div class="portfolio-card__image" role="img" aria-label="Vista previa de DF Workspace">
+                <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=600&auto=format&fit=crop" alt="Workspace Colaborativo MiPyME" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <div class="portfolio-card__overlay"></div>
+            </div>
+            <div class="portfolio-card__content">
+              <h3 id="project-4-title" class="portfolio-card__title">DF Workspace (SaaS)</h3>
+              <p class="portfolio-card__description">
+                Panel B2B para MiPyMEs. Combina control de personal y nube bajo el principio de 'Fácil ejecución y total control' (Estándar Material UI).
+              </p>
+              <div class="portfolio-card__tags">
+                <span class="portfolio-card__tag">Vanilla HTML/CSS</span>
+                <span class="portfolio-card__tag">Material UI</span>
+                <span class="portfolio-card__tag">SaaS B2B</span>
+              </div>
+              <a href="demo-workspace.html" class="portfolio-card__link" aria-label="Lanzar Demo Workspace MiPyME">
+                Lanzar Demo en Vivo <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Proyecto 5: Editorial Content Creator -->
+          <article class="portfolio-card reveal" aria-labelledby="project-5-title" data-category="wordpress" style="transition-delay: 0.1s;">
+            <div class="portfolio-card__image-wrapper">
+              <div class="portfolio-card__image" role="img" aria-label="Vista previa de Blog Editorial">
+                <img src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?q=80&w=600&auto=format&fit=crop" alt="Blog Interactivo Creator Economy" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <div class="portfolio-card__overlay"></div>
+            </div>
+            <div class="portfolio-card__content">
+              <h3 id="project-5-title" class="portfolio-card__title">DF Editorial (Blog)</h3>
+              <p class="portfolio-card__description">
+                Ecosistema interactivo para la Economía de Creadores. Arquitectura de lectura inmersiva con Pauta Publicitaria (Ads) y JS Media Hooks.
+              </p>
+              <div class="portfolio-card__tags">
+                <span class="portfolio-card__tag">Copywriting</span>
+                <span class="portfolio-card__tag">Editorial UI</span>
+                <span class="portfolio-card__tag">HTML/CSS</span>
+              </div>
+              <a href="demo-blog.html" class="portfolio-card__link" aria-label="Lanzar Demo Blog Editorial">
+                Lanzar Demo en Vivo <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Proyecto 6: Fintech Hub Institucional -->
+          <article class="portfolio-card reveal" aria-labelledby="project-6-title" data-category="ecommerce" style="transition-delay: 0.2s;">
+            <div class="portfolio-card__image-wrapper">
+              <div class="portfolio-card__image" role="img" aria-label="Vista previa de Hub Financiero">
+                <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=600&auto=format&fit=crop" alt="Terminal B2B Trading Dashboard" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <div class="portfolio-card__overlay"></div>
+            </div>
+            <div class="portfolio-card__content">
+              <h3 id="project-6-title" class="portfolio-card__title">DF Capital (Fintech)</h3>
+              <p class="portfolio-card__description">
+                Hub Institucional B2B para Proprietary Trading. Integración en vivo de TradingView API (Gráficos y Ticker) y simulador de Curva de Equidad Quant.
+              </p>
+              <div class="portfolio-card__tags">
+                <span class="portfolio-card__tag">TradingView API</span>
+                <span class="portfolio-card__tag">B2B Quant UI</span>
+                <span class="portfolio-card__tag">Dark Mode</span>
+              </div>
+              <a href="demo-fintech.html" class="portfolio-card__link" aria-label="Lanzar Demo Hub Financiero">
+                Lanzar Demo en Vivo <span>→</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Reels Section -->
+    <section class="reels-section reveal" aria-labelledby="reels-title">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 id="reels-title" class="section-title">Reales de Experiencias</h2>
+            <p class="section-subtitle">Explora momentos inmersivos y fragmentos visuales de mis proyectos en un formato dinámico.</p>
+          </div>
+          <a href="#" class="upload-reel-btn" aria-label="Subir nuevo Reel">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+            Subir Reel
+          </a>
+        </div>
+
+        <div class="reels-grid">
+          
+          <!-- Upload Placeholder Reel -->
+          <div class="reel-card upload-placeholder">
+            <div class="reel-play-icon">
+              <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+            </div>
+            <span class="upload-text">Subir experiencia</span>
+          </div>
+
+          <!-- Reel 1 -->
+          <div class="reel-card">
+            <div class="reel-play-icon">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <div class="reel-info">
+              <h3 class="reel-title">Detrás de escena 3D</h3>
+              <span class="reel-views">
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+                1.2k vistas
+              </span>
+            </div>
+          </div>
+
+          <!-- Reel 2 -->
+          <div class="reel-card">
+            <div class="reel-play-icon">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <div class="reel-info">
+              <h3 class="reel-title">UX/UI Design Proceso</h3>
+              <span class="reel-views">
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+                840 vistas
+              </span>
+            </div>
+          </div>
+
+          <!-- Reel 3 -->
+          <div class="reel-card">
+            <div class="reel-play-icon">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <div class="reel-info">
+              <h3 class="reel-title">Next.js Dashboard Reaccíon</h3>
+              <span class="reel-views">
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+                5k vistas
+              </span>
+            </div>
+          </div>
+          
+          <!-- Reel 4 -->
+          <div class="reel-card">
+            <div class="reel-play-icon">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <div class="reel-info">
+              <h3 class="reel-title">Lanzamiento E-commerce</h3>
+              <span class="reel-views">
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+                3.1k vistas
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section reveal" aria-labelledby="cta-title" style="text-align: center; padding: var(--spacing-xl) 0; position: relative; z-index: 10;">
+      <div class="container" style="background: linear-gradient(135deg, var(--color-bg-surface-glass) 0%, rgba(20, 20, 30, 0.8) 100%); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--spacing-xl) var(--spacing-md); box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
+        <h2 id="cta-title" style="font-size: clamp(1.5rem, 4vw, 2.5rem); margin-bottom: var(--spacing-md); color: white; font-weight: var(--font-weight-bold); background: linear-gradient(to right, #fff, var(--color-primary-light)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">¿Listo para digitalizar tu visión?</h2>
+        <p style="margin: var(--spacing-md) 0; color: var(--color-text-secondary); max-width: 600px; margin-left: auto; margin-right: auto; font-size: 1.125rem;">
+          Construyamos juntos soluciones web robustas, escabables y visualmente impactantes. 
+        </p>
+        <div style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap; margin-top: var(--spacing-lg);">
+          <a href="contacto.html" class="pricing-card__button" style="display: inline-block; background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark)); color: white; padding: 1rem 2rem; border-radius: var(--radius-full); text-decoration: none; font-weight: var(--font-weight-bold); transition: all 0.3s ease; box-shadow: 0 4px 15px var(--color-primary-glow);">
+            Iniciar Proyecto
+          </a>
+          <a href="servicios.html" class="pricing-card__button" style="display: inline-block; background: transparent; color: white; border: 1px solid var(--color-border-hover); padding: 1rem 2rem; border-radius: var(--radius-full); text-decoration: none; font-weight: var(--font-weight-bold); transition: all 0.3s ease;">
+            Explorar Servicios
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <!-- FOOTER GOD-TIER -->
+  <footer class="footer-advanced">
+    <div class="footer-marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>DISPONIBLE PARA PROYECTOS ÉPICOS ✦ DANIEL FELIPE ✦ </span>
+        <span>DISPONIBLE PARA PROYECTOS ÉPICOS ✦ DANIEL FELIPE ✦ </span>
+      </div>
+    </div>
+    
+    <div class="container xl footer-grid">
+      <div class="footer-col brand-col">
+        <h2 class="footer-logo">DANIEL FELIPE</h2>
+        <div class="local-time-widget">
+          <span class="pulse-dot"></span>
+          <span>Local (BOG): <strong id="fw-time">--:--</strong></span>
+        </div>
+        <p class="footer-slogan">Escalando negocios con código puro y diseño de retención profunda.</p>
+      </div>
+      
+      <div class="footer-col links-col">
+        <h3>Navegación</h3>
+        <ul>
+          <li><a href="index.html" class="footer-link">Inicio</a></li>
+          <li><a href="servicios.html" class="footer-link">Servicios</a></li>
+          <li><a href="propuestas.html" class="footer-link">Propuestas</a></li>
+          <li><a href="portafolio.html" class="footer-link">Portafolio</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col social-col">
+        <h3>Social</h3>
+        <ul>
+          <li><a href="#" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a></li>
+          <li><a href="#" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a></li>
+          <li><a href="#" target="_blank" rel="noopener noreferrer" class="footer-link">Instagram</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col action-col">
+        <h3>Contacto Rápido</h3>
+        <button class="btn-copy-email" id="btn-copy-email" data-email="fajardodaniel14@gmail.com" aria-label="Copiar correo electrónico">
+          <span id="copy-email-text">fajardodaniel14@gmail.com</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="margin-left:8px;"><path d="M16 1H4C2.9 1 2 1.9 2 3v14h2V3h12V1zm3 4H8C6.9 4 6 4.9 6 6v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H8V6h11v14z"/></svg>
+        </button>
+        <a href="contacto.html" class="btn btn-primary" style="margin-top: 1rem; width: 100%; border-radius: 50px; text-align: center; padding:0.8rem; font-weight:600; font-family:var(--font-family-mono); box-sizing:border-box; display:block;">Agendar Proyecto</a>
+      </div>
+    </div>
+    
+    <div class="footer-bottom container xl">
+      <p>&copy; 2026 Daniel Felipe Fajardo. Reservados todos los derechos.</p>
+      <button class="back-to-top" id="back-to-top" aria-label="Volver arriba">↑</button>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="assets/js/three-scene.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

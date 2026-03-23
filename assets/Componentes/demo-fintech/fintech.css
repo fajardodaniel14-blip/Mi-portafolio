@@ -1,0 +1,215 @@
+/* =========================================
+   FINTECH / BROKER THEME (Binance & Myfxbook inspired)
+   ========================================= */
+:root {
+  --fx-bg: #0b0e11;        /* Binance deep dark */
+  --fx-surface: #181a20;   /* Binance card surface */
+  --fx-border: #2b3139;
+  --fx-text: #eaecef;
+  --fx-text-muted: #848e9c;
+  --fx-primary: #fcd535;   /* Binance Yellow */
+  --fx-primary-hover: #f0c929;
+  --fx-up: #0ecb81;        /* Institutional Green */
+  --fx-down: #f6465d;      /* Institutional Red */
+  --fx-font: 'Inter', -apple-system, sans-serif;
+}
+
+body.fintech-theme {
+  background-color: var(--fx-bg);
+  color: var(--fx-text);
+  font-family: var(--fx-font);
+  margin: 0;
+  padding: 0;
+}
+
+/* =======================================
+   TOP TICKER TAPE
+   ======================================= */
+.fx-ticker-wrapper {
+  background: var(--fx-surface);
+  border-bottom: 1px solid var(--fx-border);
+  height: 40px;
+  overflow: hidden;
+}
+
+/* =======================================
+   NAVBAR
+   ======================================= */
+.fx-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 64px;
+  background: var(--fx-surface);
+  border-bottom: 1px solid var(--fx-border);
+}
+.fx-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--fx-text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.fx-logo span { color: var(--fx-primary); }
+.fx-nav-links {
+  display: flex;
+  gap: 24px;
+}
+.fx-nav-links a {
+  color: var(--fx-text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+.fx-nav-links a:hover, .fx-nav-links a.active { color: var(--fx-text); }
+.fx-nav-actions { display: flex; gap: 12px; align-items: center; }
+.fx-btn {
+  background: transparent;
+  color: var(--fx-text);
+  border: 1px solid transparent;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.fx-btn-outline { border-color: var(--fx-text-muted); }
+.fx-btn-outline:hover { border-color: var(--fx-text); }
+.fx-btn-primary { background: var(--fx-primary); color: #111; }
+.fx-btn-primary:hover { background: var(--fx-primary-hover); }
+
+/* =======================================
+   GRID LAYOUT (Terminal Workspace)
+   ======================================= */
+.fx-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 24px;
+}
+
+@media(max-width: 1024px) {
+  .fx-container { grid-template-columns: 1fr; }
+}
+
+.fx-panel {
+  background: var(--fx-surface);
+  border: 1px solid var(--fx-border);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.fx-panel-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--fx-border);
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.fx-panel-body { padding: 20px; }
+
+/* =======================================
+   LIVE CHART AREA
+   ======================================= */
+.fx-chart-wrapper {
+  height: 500px; /* Space for TradingView */
+  width: 100%;
+}
+
+/* =======================================
+   FOREX FACTORY STYLE NEWS CALENDAR
+   ======================================= */
+.fx-news-list { display: flex; flex-direction: column; }
+.fx-news-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--fx-border);
+  transition: background 0.2s;
+}
+.fx-news-item:hover { background: rgba(255,255,255,0.02); }
+.fx-news-time { width: 60px; color: var(--fx-text-muted); font-size: 0.85rem; font-family: monospace; }
+.fx-news-impact { width: 30px; display: flex; align-items: center; justify-content: center; }
+.fx-impact-high { color: var(--fx-down); } /* Red folder */
+.fx-impact-med { color: var(--fx-primary); } /* Yellow folder */
+.fx-impact-low { color: var(--fx-text-muted); }
+.fx-news-currency { width: 45px; font-weight: 600; font-size: 0.85rem; }
+.fx-news-title { flex: 1; font-size: 0.9rem; color: var(--fx-text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.fx-news-actual { width: 60px; text-align: right; font-weight: bold; font-family: monospace; }
+.fx-actual-up { color: var(--fx-up); }
+.fx-actual-down { color: var(--fx-down); }
+
+/* =======================================
+   MYFXBOOK STYLE TRACK RECORD
+   ======================================= */
+.fx-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) 2fr;
+  gap: 20px;
+  align-items: center;
+}
+@media(max-width: 1200px) {
+  .fx-stats-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.fx-stat-box { display: flex; flex-direction: column; gap: 4px; }
+.fx-stat-label { font-size: 0.8rem; color: var(--fx-text-muted); text-transform: uppercase; }
+.fx-stat-value { font-size: 1.8rem; font-weight: bold; font-family: monospace; }
+.fx-stat-value.up { color: var(--fx-up); }
+.fx-stat-value.down { color: var(--fx-down); }
+
+.fx-equity-curve {
+  height: 80px;
+  width: 100%;
+  border-bottom: 1px solid var(--fx-border);
+  border-left: 1px solid var(--fx-border);
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+/* CSS Polygon to simulate an equity growth curve */
+.fx-equity-poly {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(14, 203, 129, 0.2), transparent);
+  clip-path: polygon(0 100%, 0 80%, 20% 70%, 40% 40%, 60% 50%, 80% 20%, 100% 10%, 100% 100%);
+  border-top: 2px solid var(--fx-up);
+}
+.fx-equity-line {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;
+}
+/* Drawing the line manually to match the clip-path borders */
+.fx-equity-line::after {
+  content: ''; position: absolute;
+  width: 100px; height: 2px;
+}
+
+/* =======================================
+   TECHNICAL ANALYSIS BLOGS
+   ======================================= */
+.fx-blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+.fx-blog-card {
+  text-decoration: none; color: inherit;
+  background: #111317; border-radius: 6px;
+  border: 1px solid var(--fx-border); overflow: hidden;
+  transition: transform 0.2s, border-color 0.2s;
+}
+.fx-blog-card:hover { transform: translateY(-3px); border-color: var(--fx-text-muted); }
+.fx-blog-img { width: 100%; height: 140px; object-fit: cover; border-bottom: 1px solid var(--fx-border); }
+.fx-blog-content { padding: 15px; }
+.fx-blog-title { font-size: 0.95rem; font-weight: 600; margin: 0 0 10px 0; line-height: 1.4; color: var(--fx-text); }
+.fx-blog-meta { font-size: 0.8rem; color: var(--fx-text-muted); display: flex; justify-content: space-between; }

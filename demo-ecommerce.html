@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Market E-Commerce | Alta Conversión</title>
+  <meta name="description" content="Demostración de Arquitectura E-Commerce B2B (Inspirado en Alibaba, Amazon y JD.com)">
+
+  <!-- Pragmatic Theme Specific CSS (Independent) -->
+  <link rel="stylesheet" href="assets/componentes/demo-ecommerce/ecommerce.css">
+</head>
+<body class="ecommerce-theme">
+
+  <!-- AMAZON / ALIBABA NAVBAR (Pragmatic & Search Heavy) -->
+  <header class="ecom-header">
+    <a href="portafolio.html" style="color:white; text-decoration:none; display:flex; align-items:center; gap:5px; font-weight:600; font-size:14px; margin-right:10px; padding:5px 10px; border:1px solid transparent; white-space:nowrap;" onmouseover="this.style.border='1px solid white'; this.style.borderRadius='2px';" onmouseout="this.style.border='1px solid transparent';">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg> Portafolio
+    </a>
+    <a href="index.html" class="ecom-logo">DF<span>Market</span></a>
+    
+    <div class="ecom-search-bar">
+      <select class="ecom-search-select">
+        <option>Todos los Dptos.</option>
+        <option>Electrónica</option>
+        <option>Hogar</option>
+      </select>
+      <input type="text" class="ecom-search-input" placeholder="Buscar productos, marcas y más...">
+      <button class="ecom-search-btn" aria-label="Buscar">
+        <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" /></svg>
+      </button>
+    </div>
+
+    <div class="ecom-header-actions">
+      <a href="#" class="ecom-nav-item">
+        <span>Hola, Inicia sesión</span>
+        <span>Cuentas y Listas</span>
+      </a>
+      <a href="#" class="ecom-nav-item">
+        <span>Devoluciones</span>
+        <span>y Pedidos</span>
+      </a>
+      <a href="#" class="ecom-nav-item ecom-cart">
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="white"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+        <span class="ecom-cart-count">0</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- AMAZON SUBNAV -->
+  <nav class="ecom-subnav">
+    <a href="#">≡ Todo</a>
+    <a href="#">Ofertas del Día</a>
+    <a href="#">Atención al Cliente</a>
+    <a href="#">Listas</a>
+    <a href="#">Tarjetas de Regalo</a>
+    <a href="#">Vender</a>
+  </nav>
+
+  <!-- ALIBABA / JD.COM MASSIVE GRID SYSTEM -->
+  <main class="ecom-container">
+    
+    <div class="ecom-hero-grid">
+      <!-- Sidebar Categories (Alibaba logic) -->
+      <aside class="ecom-sidebar">
+        <h3>Categorías</h3>
+        <ul>
+          <li><a href="#">Electrónica y PCs <span>›</span></a></li>
+          <li><a href="#">Moda y Accesorios <span>›</span></a></li>
+          <li><a href="#">Hogar y Cocina <span>›</span></a></li>
+          <li><a href="#">Deportes <span>›</span></a></li>
+          <li><a href="#">Juguetes y Juegos <span>›</span></a></li>
+          <li><a href="#">Belleza y Salud <span>›</span></a></li>
+          <li><a href="#">Automotriz <span>›</span></a></li>
+          <li><a href="#">Software B2B <span>›</span></a></li>
+        </ul>
+      </aside>
+
+      <!-- Central Hero Carousel (Amazon/JD Event Ad) -->
+      <div class="ecom-hero-banner">
+        <img src="https://images.unsplash.com/photo-1555529771-835f59fc5efe?q=80&w=1200&auto=format&fit=crop" alt="Promo Tech Event">
+      </div>
+
+      <!-- User Widget & Flash Deals (JD.com Modesty) -->
+      <aside class="ecom-user-widget">
+        <div class="ecom-widget-card">
+          <div class="ecom-avatar"></div>
+          <p style="font-size:13px; margin:0 0 10px 0;">¡Inicia sesión para tu mejor experiencia!</p>
+          <button class="ecom-btn ecom-btn-add" style="width:100%; margin-bottom:5px;">Iniciar Sesión</button>
+          <a href="#" style="font-size:12px; color:var(--ecom-link);">Registrarse gratis</a>
+        </div>
+        <div class="ecom-flash-deal">
+          <h4>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M13 3L4 14h7v7l9-11h-7z"/></svg>
+            Oferta Relámpago
+          </h4>
+          <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?q=80&w=300&auto=format&fit=crop" alt="Smartwatch" style="width:100%; border-radius:4px; margin-bottom:5px;">
+          <div class="ecom-tag-discount">-45% Dto.</div>
+          <div style="font-size:12px; text-decoration:line-through; color:#777;">$199.99</div>
+          <div style="font-size:18px; font-weight:bold; color:var(--ecom-discount);">$109.99</div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- PRAGMATIC PRODUCT GRID (Amazon High-Conversion Display) -->
+    <section>
+      <h2 class="ecom-section-title">Inspirado en tu historial de compras</h2>
+      
+      <div class="ecom-product-grid">
+        
+        <!-- Product 1 -->
+        <a href="#" class="ecom-card">
+          <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=500&auto=format&fit=crop" alt="Auriculares" class="ecom-card-img">
+          <h3 class="ecom-card-title">Auriculares Inalámbricos Over-Ear Noise Cancelling, Bluetooth 5.0, Autonomía 40h</h3>
+          <div class="ecom-rating">
+            <span class="ecom-stars">★★★★☆</span>
+            <span class="ecom-review-count">14,233</span>
+          </div>
+          <div class="ecom-price-block">
+            <span class="ecom-price-symbol">$</span><span class="ecom-price-whole">89</span><span class="ecom-price-fraction">99</span>
+          </div>
+          <div class="ecom-prime">✓ envíos GRATIS</div>
+          <div class="ecom-btn-wrap">
+            <button class="ecom-btn ecom-btn-add">Agregar</button>
+          </div>
+        </a>
+
+        <!-- Product 2 -->
+        <a href="#" class="ecom-card">
+          <img src="https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?q=80&w=500&auto=format&fit=crop" alt="Macbook" class="ecom-card-img">
+          <h3 class="ecom-card-title">Laptop Pro 14" M2 Chip 16GB RAM 512GB SSD - Plata. Rendimiento Profesional</h3>
+          <div class="ecom-rating">
+            <span class="ecom-stars">★★★★★</span>
+            <span class="ecom-review-count">3,892</span>
+          </div>
+          <div class="ecom-price-block">
+            <span class="ecom-price-symbol">$</span><span class="ecom-price-whole">1,249</span><span class="ecom-price-fraction">00</span>
+          </div>
+          <div class="ecom-prime">✓ envíos GRATIS</div>
+          <div class="ecom-btn-wrap">
+            <button class="ecom-btn ecom-btn-add">Agregar</button>
+          </div>
+        </a>
+
+        <!-- Product 3 -->
+        <a href="#" class="ecom-card">
+          <div class="ecom-tag-discount" style="position:absolute;">Más Vendido</div>
+          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=500&auto=format&fit=crop" alt="Reloj" class="ecom-card-img">
+          <h3 class="ecom-card-title">Reloj Inteligente Fitness Tracker, Monitor de Ritmo Cardíaco, Resistente al Agua IP68</h3>
+          <div class="ecom-rating">
+            <span class="ecom-stars">★★★★☆</span>
+            <span class="ecom-review-count">42,911</span>
+          </div>
+          <div class="ecom-price-block">
+            <span class="ecom-price-symbol">$</span><span class="ecom-price-whole">39</span><span class="ecom-price-fraction">50</span>
+          </div>
+          <div class="ecom-prime">✓ envíos GRATIS</div>
+          <div class="ecom-btn-wrap">
+            <button class="ecom-btn ecom-btn-add">Agregar</button>
+          </div>
+        </a>
+
+        <!-- Product 4 -->
+        <a href="#" class="ecom-card">
+          <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=500&auto=format&fit=crop" alt="Auriculares" class="ecom-card-img">
+          <h3 class="ecom-card-title">Altavoz Bluetooth Portátil, Sonido Estéreo 360°, Bajos Profundos, Batería 24h</h3>
+          <div class="ecom-rating">
+            <span class="ecom-stars">★★★★☆</span>
+            <span class="ecom-review-count">8,541</span>
+          </div>
+          <div class="ecom-price-block">
+            <span class="ecom-price-symbol">$</span><span class="ecom-price-whole">59</span><span class="ecom-price-fraction">99</span>
+          </div>
+          <div class="ecom-prime">✓ envíos GRATIS</div>
+          <div class="ecom-btn-wrap">
+            <button class="ecom-btn ecom-btn-add">Agregar</button>
+          </div>
+        </a>
+
+        <!-- Product 5 -->
+        <a href="#" class="ecom-card">
+          <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?q=80&w=500&auto=format&fit=crop" alt="Cámara" class="ecom-card-img">
+          <h3 class="ecom-card-title">Cámara Mirrorless Digital 4k Video 24.2 MP con Lente Kit 15-45mm</h3>
+          <div class="ecom-rating">
+            <span class="ecom-stars">★★★★★</span>
+            <span class="ecom-review-count">1,204</span>
+          </div>
+          <div style="font-size:11px; text-decoration:line-through; color:#565959;">$799.00</div>
+          <div class="ecom-price-block">
+            <span class="ecom-price-symbol" style="color:var(--ecom-discount)">$</span><span class="ecom-price-whole" style="color:var(--ecom-discount)">649</span><span class="ecom-price-fraction" style="color:var(--ecom-discount)">00</span>
+          </div>
+          <div class="ecom-prime">✓ envíos GRATIS</div>
+          <div class="ecom-btn-wrap">
+            <button class="ecom-btn ecom-btn-add">Agregar</button>
+          </div>
+        </a>
+
+      </div>
+    </section>
+  </main>
+
+  <a href="#top" class="ecom-btn-top">Volver arriba</a>
+  <footer class="ecom-footer">
+    <div style="margin-bottom:20px;">
+      <a href="portafolio.html" style="color:#febd69; text-decoration:underline; font-weight:bold; font-size:16px;">← REGRESAR AL PORTAFOLIO PRINCIPAL</a>
+    </div>
+    <p>Este es un entorno de demostración técnica (UI/UX).<br>Desarrollado en puro HTML/CSS emulando Arquitecturas Conversionales de Alta Escala.</p>
+    <p style="margin-top:10px;">&copy; 2026 Daniel Felipe. Demo E-Commerce.</p>
+  </footer>
+
+</body>
+</html>

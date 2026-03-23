@@ -1,0 +1,367 @@
+/* E-COMMERCE HIGH-DENSITY THEME (Amazon / Alibaba / JD.com blend) */
+:root {
+  --ecom-bg: #eaeded; /* Amazon Neutral Background */
+  --ecom-surface: #ffffff;
+  --ecom-nav-bg: #131921; /* Amazon Dark Navy */
+  --ecom-subnav-bg: #232f3e;
+  --ecom-text-main: #0f1111;
+  --ecom-text-light: #565959;
+  --ecom-link: #007185; /* Amazon classic blue link */
+  --ecom-link-hover: #c45500;
+  --ecom-btn-primary: #ffd814; /* Amazon Yellow (Add to cart) */
+  --ecom-btn-primary-hover: #f7ca00;
+  --ecom-btn-secondary: #ffa41c; /* Buy Now Orange */
+  --ecom-btn-secondary-hover: #fa8900;
+  --ecom-discount: #cc0c39; /* JD.com / Alibaba urgent red */
+  --ecom-border: #d5d9d9;
+}
+
+body.ecommerce-theme {
+  background-color: var(--ecom-bg);
+  color: var(--ecom-text-main);
+  /* Pragmatic typography vs Luxury typography */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0;
+}
+
+/* =======================================
+   HEADER ALIBABA / AMAZON STYLE
+   ======================================= */
+.ecom-header {
+  background: var(--ecom-nav-bg);
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.ecom-logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: white;
+  text-decoration: none;
+  letter-spacing: -1px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.ecom-logo span { color: #febd69; }
+
+/* The Engine: Massive Search Bar */
+.ecom-search-bar {
+  flex: 1;
+  display: flex;
+  height: 40px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: white;
+}
+.ecom-search-select {
+  background: #f3f3f3;
+  border: none;
+  border-right: 1px solid #ccc;
+  padding: 0 10px;
+  color: #333;
+  font-size: 12px;
+  cursor: pointer;
+}
+.ecom-search-input {
+  flex: 1;
+  padding: 0 15px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+}
+.ecom-search-input:focus {
+  box-shadow: inset 0 0 0 2px #f90;
+}
+.ecom-search-btn {
+  background: #febd69;
+  border: none;
+  padding: 0 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.ecom-search-btn:hover { background: #f3a847; }
+.ecom-search-btn svg { width: 22px; height: 22px; fill: #111; }
+
+.ecom-header-actions {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.ecom-nav-item {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.ecom-nav-item:hover { border-color: white; border-radius: 2px; }
+.ecom-nav-item span:first-child { font-size: 11px; color: #ccc; }
+.ecom-nav-item span:last-child { font-size: 14px; font-weight: bold; }
+
+.ecom-cart {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+}
+.ecom-cart-count {
+  color: #f08804;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* SUBNAV */
+.ecom-subnav {
+  background: var(--ecom-subnav-bg);
+  color: white;
+  padding: 8px 20px;
+  display: flex;
+  gap: 20px;
+  font-size: 13px;
+  overflow-x: auto;
+}
+.ecom-subnav a {
+  color: white;
+  text-decoration: none;
+  padding: 4px 6px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.ecom-subnav a:hover {
+  border-color: white;
+  border-radius: 2px;
+}
+
+/* =======================================
+   ALIBABA / JD.COM MASSIVE GRID SYSTEM
+   ======================================= */
+.ecom-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.ecom-hero-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr 300px;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+@media(max-width: 1100px) {
+  .ecom-hero-grid { grid-template-columns: 200px 1fr; }
+  .ecom-user-widget { display: none; }
+}
+@media(max-width: 768px) {
+  .ecom-hero-grid { grid-template-columns: 1fr; }
+  .ecom-sidebar, .ecom-user-widget { display: none; }
+  .ecom-header { flex-wrap: wrap; }
+  .ecom-search-bar { order: 3; width: 100%; flex: none; margin-top: 10px; }
+}
+
+/* Sidebar Categories */
+.ecom-sidebar {
+  background: var(--ecom-surface);
+  padding: 15px 0;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  height: 100%;
+}
+.ecom-sidebar h3 {
+  padding: 0 15px 10px;
+  font-size: 16px;
+  border-bottom: 1px solid #eee;
+  margin: 0 0 10px 0;
+}
+.ecom-sidebar ul { list-style: none; padding: 0; margin: 0; }
+.ecom-sidebar li a {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 15px;
+  color: var(--ecom-text-light);
+  text-decoration: none;
+  font-size: 14px;
+}
+.ecom-sidebar li a:hover {
+  background: #f7f7f7;
+  color: var(--ecom-text-main);
+  font-weight: 500;
+}
+
+/* Hero Carousel Area */
+.ecom-hero-banner {
+  background: #232f3e; /* Fallback */
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+}
+.ecom-hero-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* User / Deals Widget (JD.com Modest Style) */
+.ecom-user-widget {
+  background: var(--ecom-surface);
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.ecom-widget-card {
+  text-align: center;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+.ecom-avatar { width: 50px; height: 50px; border-radius: 50%; background: #eee; margin: 0 auto 10px; }
+.ecom-flash-deal { background: #feebeb; padding: 15px; border-radius: 6px; flex: 1; }
+.ecom-flash-deal h4 { color: var(--ecom-discount); margin: 0 0 10px 0; display: flex; align-items: center; gap: 5px; }
+
+/* =======================================
+   PRODUCT GRIDS (Pragmatic Conversion)
+   ======================================= */
+.ecom-section-title {
+  font-size: 20px;
+  margin: 0 0 15px 0;
+  color: var(--ecom-text-main);
+}
+
+.ecom-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.ecom-card {
+  background: var(--ecom-surface);
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* Modest shadow */
+}
+
+.ecom-card:hover { /* Pragmatic hover */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.ecom-card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.ecom-card-title {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 0 0 8px 0;
+  color: var(--ecom-link);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.ecom-card:hover .ecom-card-title {
+  color: var(--ecom-link-hover);
+  text-decoration: underline;
+}
+
+.ecom-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+.ecom-stars { color: #ffa41c; font-size: 14px; }
+.ecom-review-count { color: var(--ecom-link); font-size: 12px; }
+
+.ecom-price-block { margin-top: auto; }
+.ecom-price-symbol { font-size: 12px; vertical-align: top; position: relative; top: 2px; }
+.ecom-price-whole { font-size: 24px; font-weight: 500; }
+.ecom-price-fraction { font-size: 12px; vertical-align: top; position: relative; top: 2px; }
+
+.ecom-prime {
+  color: #00a8e1;
+  font-weight: bold;
+  font-size: 12px;
+  font-style: italic;
+  margin-top: 4px;
+}
+
+.ecom-btn-wrap { margin-top: 15px; display: flex; gap: 8px; }
+.ecom-btn {
+  flex: 1;
+  text-align: center;
+  padding: 8px 0;
+  border-radius: 100px;
+  border: 1px solid transparent;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.ecom-btn-add { background: var(--ecom-btn-primary); border-color: #fcd200; }
+.ecom-btn-add:hover { background: var(--ecom-btn-primary-hover); border-color: #e5b300; }
+.ecom-btn-buy { background: var(--ecom-btn-secondary); border-color: #fa8900; }
+.ecom-btn-buy:hover { background: var(--ecom-btn-secondary-hover); border-color: #e67d00; }
+
+/* =======================================
+   JD.COM RED TAGS (Discount / Limited)
+   ======================================= */
+.ecom-tag-discount {
+  background: var(--ecom-discount);
+  color: white;
+  padding: 4px 6px;
+  font-size: 11px;
+  font-weight: bold;
+  display: inline-block;
+  border-radius: 2px;
+  margin-bottom: 5px;
+}
+
+.ecom-footer {
+  background: var(--ecom-nav-bg);
+  color: #ccc;
+  padding: 40px 0;
+  text-align: center;
+  font-size: 13px;
+  margin-top: 40px;
+}
+.ecom-btn-top {
+  display: block;
+  background: #37475a;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  text-decoration: none;
+  font-size: 13px;
+}
+.ecom-btn-top:hover { background: #485769; }

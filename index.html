@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Daniel Felipe - Escalando negocios con ingeniería web y diseño de retención.">
+  <title>Daniel Felipe | WebGL, Front-End & Conversión</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
+  <link rel="stylesheet" href="assets/componentes/header/header.css">
+  <link rel="stylesheet" href="assets/componentes/about/about.css">
+  <link rel="stylesheet" href="assets/componentes/about/about-interactive.css">
+  <link rel="stylesheet" href="assets/componentes/footer/footer.css">
+</head>
+<body class="theme-dark">
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="container header__container">
+      <h1 class="header__logo">DANIEL FELIPE</h1>
+      <button class="header__toggle" aria-expanded="false" aria-controls="header-nav" aria-label="Alternar menú">
+        <span class="header__toggle-icon"></span>
+      </button>
+      <nav class="header__nav" role="navigation" id="header-nav">
+        <ul class="header__menu">
+          <li class="header__menu-item"><a href="index.html" class="header__link" aria-current="page">Inicio</a></li>
+          <li class="header__menu-item"><a href="servicios.html" class="header__link">Servicios</a></li>
+          <li class="header__menu-item"><a href="propuestas.html" class="header__link">Propuestas</a></li>
+          <li class="header__menu-item"><a href="portafolio.html" class="header__link">Portfolio</a></li>
+          <li class="header__menu-item"><a href="contacto.html" class="header__link">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    
+    <!-- Hero Orientado a la Conversión (The Hook) -->
+    <section class="about-hero">
+      <div class="ethereal-orb orb-1"></div>
+      <div class="ethereal-orb orb-2"></div>
+      
+      <div class="container xl">
+        <div class="about-grid">
+          
+          <div class="about-intro reveal">
+            <span class="about-greeting">Estratega Frontend & Arquitecto Visual</span>
+            <h1 class="about-title">Transmuto <br>código en <br><span class="gradient-text">Conversión.</span></h1>
+            <p class="about-bio">
+              En una era donde el usuario abandona una web en 3 segundos, mi trabajo es <strong>retener visualmente e impactar cerebralmente</strong>. Desarrollo plataformas Inmersivas (WebGL), E-Commerce ultra-veloces y paneles SaaS que multiplican el prestigio de tu marca y cierran ventas.
+            </p>
+            <div class="about-actions">
+              <!-- Magnetic Buttons -->
+              <a href="servicios.html" class="btn btn-primary btn-magnetic" data-strength="20">Descubre mi Alquimia Web</a>
+              <a href="contacto.html" class="btn btn-secondary btn-magnetic" data-strength="40">Agendar Llama de 15 Min</a>
+            </div>
+          </div>
+
+          <!-- Avatar -->
+          <div class="about-visual reveal" style="transition-delay: 0.1s;">
+            <div class="about-avatar-container" data-tilt>
+              <div class="magic-ring"></div>
+              <div class="magic-ring"></div>
+              <img src="assets/imagenes/perfil-contacto.jpg" alt="Daniel Felipe - Arquitecto Front-End" class="avatar-image">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Proof (Marketing Digital avanzado) -->
+    <section class="social-proof-section reveal">
+      <div class="container xl">
+        <div class="metrics-grid">
+          <div class="metric-item">
+            <h4 class="metric-number" data-target="98">0</h4><span class="metric-percent">%</span>
+            <p class="metric-label">Retención de usuario incrementada promedio</p>
+          </div>
+          <div class="metric-item">
+            <h4 class="metric-number" data-target="100">0</h4>
+            <p class="metric-label">Lighthouse A+ (Rendimiento garantizado)</p>
+          </div>
+          <div class="metric-item">
+            <h4 class="metric-number" data-target="5">0</h4><span class="metric-percent">+</span>
+            <p class="metric-label">Años codificando experiencias estelares</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Arsenal Técnico (Interactivo 3D Tilt) -->
+    <section class="skills-section reveal">
+      <div class="container">
+        <h2 style="font-size:3rem; text-align:center; margin-bottom:1rem; letter-spacing:-0.03em;">Arsenal Técnico.</h2>
+        <p style="text-align:center; color:var(--color-text-secondary); max-width:600px; margin:0 auto;">La vanguardia absoluta para crear despliegues visuales sin precedentes.</p>
+        
+        <div class="skills-grid-interactive mt-10">
+          <div class="skill-card-3d" data-tilt>
+            <div class="skill-card-inner">
+              <h3>Magia Front-End</h3>
+              <ul class="skill-list">
+                <li><span>Three.js / WebGL</span> <span>Experto</span></li>
+                <li><span>Next.js / React</span> <span>Avanzado</span></li>
+                <li><span>Tailwind & CSS</span> <span>Maestro</span></li>
+                <li><span>GSAP / Loconotive</span> <span>Fluido</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="skill-card-3d" data-tilt data-tilt-reverse>
+            <div class="skill-card-inner">
+              <h3>Ingeniería Back-End</h3>
+              <ul class="skill-list">
+                <li><span>Node.js / Express</span> <span>Sólido</span></li>
+                <li><span>WordPress Headless</span> <span>Avanzado</span></li>
+                <li><span>Bases de Datos</span> <span>Preciso</span></li>
+                <li><span>GraphQL & REST</span> <span>Óptimo</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="skill-card-3d" data-tilt>
+            <div class="skill-card-inner">
+              <h3>Alquimia de Producción</h3>
+              <ul class="skill-list">
+                <li><span>Vercel / AWS</span> <span>Deploy</span></li>
+                <li><span>Figma / UI Mockups</span> <span>Píxel</span></li>
+                <li><span>Core Web Vitals</span> <span>Rendimiento</span></li>
+                <li><span>SEO Técnico</span> <span>Ranking</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Reel / One Piece Commercial -->
+    <section class="video-reel-section reveal" style="padding: 4rem 0; background: var(--color-bg-base);">
+      <div class="container text-center">
+        <h2 style="font-size: 2.5rem; font-family: var(--font-family-mono); color: var(--color-primary-light); margin-bottom: 2rem;">"El Rey de la Conversión"</h2>
+        
+        <div class="video-container" style="max-width: 900px; width: 100%; margin: 0 auto; border-radius: 24px; overflow: hidden; box-shadow: 0 30px 60px -15px rgba(139, 92, 246, 0.4); border: 2px solid rgba(255,255,255,0.1); position: relative; aspect-ratio: 16/9; background: #000;">
+          
+          <!-- Botón de Volumen Custom (Estilo TikTok) -->
+          <button class="sound-toggle" id="reel-sound-toggle" aria-label="Activar Sonido" style="position: absolute; bottom: 15px; right: 15px; z-index: 10; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); border-radius: 50%; cursor: pointer; color: white; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px;">
+            <svg id="icon-muted" viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+              <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+            </svg>
+            <svg id="icon-unmuted" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" style="display:none;">
+              <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+            </svg>
+          </button>
+
+          <!-- Video Player Multi-formato ultraligero (Lazy Load) -->
+          <video id="pirate-reel" class="lazy-video" preload="none" muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; position: relative; z-index: 1;">
+            <source src="assets/videos/reel-one-piece.webm" type="video/webm">
+            <source src="assets/videos/reel-one-piece.mp4" type="video/mp4">
+            Tu navegador no soporta reproducción de video.
+          </video>
+        </div>
+        
+        <p style="margin-top: 1.5rem; color: var(--color-text-secondary);">¿Ser el Rey de los Piratas? No, construyamos el Imperio de tu marca.</p>
+      </div>
+    </section>
+
+    <!-- Lead Generation CTA (El Embudo) -->
+    <section class="lead-gen-section reveal">
+      <div class="container text-center">
+        <h2 class="lead-gen-title">Tu próxima inversión digital no debería ser un gasto.</h2>
+        <p class="lead-gen-subtitle">Dejemos de hablar de "páginas web" y empecemos a construir un activo que te genere prestigio y retornos mes a mes.</p>
+        <a href="contacto.html" class="btn-magical btn-alchemy style-huge">Inicia el Hechizo Hoy</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER GOD-TIER -->
+  <footer class="footer-advanced">
+    <div class="footer-marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>DISPONIBLE PARA PROYECTOS ÉPICOS ✦ DANIEL FELIPE ✦ </span>
+        <span>DISPONIBLE PARA PROYECTOS ÉPICOS ✦ DANIEL FELIPE ✦ </span>
+      </div>
+    </div>
+    
+    <div class="container xl footer-grid">
+      <div class="footer-col brand-col">
+        <h2 class="footer-logo">DANIEL FELIPE</h2>
+        <div class="local-time-widget">
+          <span class="pulse-dot"></span>
+          <span>Local (BOG): <strong id="fw-time">--:--</strong></span>
+        </div>
+        <p class="footer-slogan">Escalando negocios con código puro y diseño de retención profunda.</p>
+      </div>
+      
+      <div class="footer-col links-col">
+        <h3>Navegación</h3>
+        <ul>
+          <li><a href="index.html" class="footer-link">Inicio</a></li>
+          <li><a href="servicios.html" class="footer-link">Servicios</a></li>
+          <li><a href="propuestas.html" class="footer-link">Propuestas</a></li>
+          <li><a href="portafolio.html" class="footer-link">Portafolio</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col social-col">
+        <h3>Social</h3>
+        <ul>
+          <li><a href="#" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a></li>
+          <li><a href="#" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a></li>
+          <li><a href="#" target="_blank" rel="noopener noreferrer" class="footer-link">Instagram</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col action-col">
+        <h3>Contacto Rápido</h3>
+        <button class="btn-copy-email" id="btn-copy-email" data-email="fajardodaniel14@gmail.com" aria-label="Copiar correo electrónico">
+          <span id="copy-email-text">fajardodaniel14@gmail.com</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="margin-left:8px;"><path d="M16 1H4C2.9 1 2 1.9 2 3v14h2V3h12V1zm3 4H8C6.9 4 6 4.9 6 6v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H8V6h11v14z"/></svg>
+        </button>
+        <a href="contacto.html" class="btn btn-primary" style="margin-top: 1rem; width: 100%; border-radius: 50px; text-align: center; padding:0.8rem; font-weight:600; font-family:var(--font-family-mono); box-sizing:border-box; display:block;">Agendar Proyecto</a>
+      </div>
+    </div>
+    
+    <div class="footer-bottom container xl">
+      <p>&copy; 2026 Daniel Felipe Fajardo. Reservados todos los derechos.</p>
+      <button class="back-to-top" id="back-to-top" aria-label="Volver arriba">↑</button>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

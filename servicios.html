@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Servicios Mágicos de desarrollo web premium de Daniel Felipe Fajardo">
+  <title>Grimorio de Servicios | Daniel Felipe</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
+  <link rel="stylesheet" href="assets/componentes/header/header.css">
+  <link rel="stylesheet" href="assets/componentes/hero/hero.css">
+  <!-- CSS Nuevo Opcional para Mágico -->
+  <link rel="stylesheet" href="assets/componentes/pricing-card/pricing-card-magic.css">
+  <link rel="stylesheet" href="assets/componentes/footer/footer.css">
+</head>
+<body class="theme-dark">
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="container header__container">
+      <h1 class="header__logo">DANIEL FELIPE</h1>
+      
+      <button class="header__toggle" aria-expanded="false" aria-controls="header-nav">
+        <span class="header__toggle-icon"></span>
+      </button>
+      
+      <nav class="header__nav" role="navigation" id="header-nav">
+        <ul class="header__menu">
+          <li class="header__menu-item"><a href="index.html" class="header__link">Inicio</a></li>
+          <li class="header__menu-item"><a href="servicios.html" class="header__link" aria-current="page">Servicios</a></li>
+          <li class="header__menu-item"><a href="propuestas.html" class="header__link">Propuestas</a></li>
+          <li class="header__menu-item"><a href="portafolio.html" class="header__link">Portfolio</a></li>
+          <li class="header__menu-item"><a href="contacto.html" class="header__link">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    
+    <!-- Hero Mágico -->
+    <section class="hero" aria-labelledby="hero-title" style="background:var(--color-bg-base); padding:8rem 0 4rem; position:relative; z-index:2;">
+      <div class="container xl">
+        <h1 id="hero-title" class="pricing-magical-title reveal">Transmutación Digital.</h1>
+        <p class="pricing-magical-subtitle reveal" style="transition-delay:0.1s;">Elevamos tu marca por encima del ruido. No construimos simples páginas web, conjuramos sistemas visuales y técnicos inmortales.</p>
+      </div>
+    </section>
+
+    <!-- Commercial Ad Video Container -->
+    <section class="commercial-ad reveal" style="background:var(--color-bg-base); padding-bottom: 5rem; position:relative; z-index:2;">
+      <div class="container">
+        <div class="video-container" style="max-width: 1000px; width: 100%; margin: 0 auto; border-radius: 24px; overflow: hidden; box-shadow: 0 40px 80px -20px rgba(99, 102, 241, 0.4); border: 1px solid rgba(255,255,255,0.05); position: relative; aspect-ratio: 16/9; background: #000;">
+          <video id="comercial-servicios-video" class="lazy-video" preload="none" muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; position: relative; z-index: 1;">
+            <source src="assets/videos/comercial-servicios.webm" type="video/webm">
+            <source src="assets/videos/comercial-servicios.mp4" type="video/mp4">
+          </video>
+          <button id="services-sound-toggle" class="sound-toggle-btn" aria-label="Activar Sonido" style="position: absolute; bottom: 20px; right: 20px; background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.2); color: white; width: 44px; height: 44px; border-radius: 50%; z-index: 10; cursor: pointer; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); transition: all 0.3s ease;">
+            <svg id="services-icon-muted" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+            </svg>
+            <svg id="services-icon-unmuted" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="display:none;">
+              <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Paquetes de Servicio (Realismo Mágico) -->
+    <section class="magical-pricing-section">
+      <div class="magic-fog"></div>
+      <div class="container xl">
+        
+        <div class="pricing-grid-magic">
+          
+          <!-- Spell 1 -->
+          <article class="spell-card reveal" style="transition-delay:0.2s;">
+            <header class="spell-header">
+              <h3 class="spell-name">Espejismo Digital</h3>
+              <p class="spell-desc">La ilusión perfecta de presencia online, blindada con fundamentos técnicos irrompibles.</p>
+              <div class="spell-price">
+                <span class="spell-amount">20</span>
+                <div class="spell-currency">
+                  <span class="spell-currency-symbol">USD</span>
+                  <span class="spell-period">/hora</span>
+                </div>
+              </div>
+            </header>
+            
+            <ul class="spell-features">
+              <li class="spell-feature">
+                <span class="spell-icon">✦</span> <span><strong>Presencia Inmediata:</strong> 1 Landing Page de altísima conversión.</span>
+              </li>
+              <li class="spell-feature">
+                <span class="spell-icon">✦</span> <span><strong>Velocidad de Luz:</strong> Carga optimizada (A+ en Google Lighthouse).</span>
+              </li>
+              <li class="spell-feature">
+                <span class="spell-icon">✦</span> <span><strong>Conexión:</strong> Formulario de captura y links sociales integrados.</span>
+              </li>
+              <li class="spell-feature">
+                <span class="spell-icon">✦</span> <span><strong>Visibilidad:</strong> Arquitectura SEO básica On-Page.</span>
+              </li>
+            </ul>
+            
+            <a href="contacto.html?service=basic" class="btn-magical btn-crystal">Invocar Plan Esencial</a>
+          </article>
+
+          <!-- Spell 2 - Master -->
+          <article class="spell-card master-spell reveal" style="transition-delay:0.4s;">
+            <header class="spell-header">
+              <h3 class="spell-name">Alquimia Web</h3>
+              <p class="spell-desc">Transmutamos código estándar en oro corporativo. Plataformas que hipnotizan y convierten clientes.</p>
+              <div class="spell-price">
+                <span class="spell-amount" style="color:#c084fc;">35</span>
+                <div class="spell-currency">
+                  <span class="spell-currency-symbol" style="color:rgba(255,255,255,0.8);">USD</span>
+                  <span class="spell-period" style="color:rgba(255,255,255,0.6);">/hora</span>
+                </div>
+              </div>
+            </header>
+            
+            <ul class="spell-features">
+              <li class="spell-feature">
+                <span class="spell-icon">✨</span> <span><strong>Portal Completo:</strong> Sitio multi-página (hasta 6 rutas dinámicas).</span>
+              </li>
+              <li class="spell-feature">
+                <span class="spell-icon">✨</span> <span><strong>Autonomía Real:</strong> Integración total con CMS (Tú dominas el contenido).</span>
+              </li>
+              <li class="spell-feature">
+                <span class="spell-icon">✨</span> <span><strong>Hechizos Visuales:</strong> Animaciones Interactivas (Hover states & scroll).</span>
+              </li>
+              <li class="spell-feature">
+                <span class="spell-icon">✨</span> <span><strong>Visión Todo Lo Ve:</strong> Integración con Google Analytics 4.</span>
+              </li>
+              <li class="spell-feature">
+                <span class="spell-icon">✨</span> <span><strong>Dominio del Arte:</strong> Capacitación en vivo de 1h para usar tu portal.</span>
+              </li>
+            </ul>
+            
+            <a href="contacto.html?service=pro" class="btn-magical btn-alchemy">Aceptar la Transmutación</a>
+          </article>
+
+          <!-- Spell 3 -->
+          <article class="spell-card reveal" style="transition-delay:0.3s;">
+            <header class="spell-header">
+              <h3 class="spell-name">Grimorio Empresarial</h3>
+              <p class="spell-desc">El máximo encantamiento. Sistemas complejos, inquebrantables y adaptados a las lógicas más oscuras de tu negocio.</p>
+              <div class="spell-price">
+                <span class="spell-amount">75</span>
+                <div class="spell-currency">
+                  <span class="spell-currency-symbol">USD</span>
+                  <span class="spell-period">/hora</span>
+                </div>
+              </div>
+            </header>
+            
+            <ul class="spell-features">
+              <li class="spell-feature">
+                <span class="spell-icon">✦</span> <span><strong>Infraestructura Inmortal:</strong> Aplicación Headless React/Next.js.</span>
+              </li>
+              <li class="spell-feature">
+                <span class="spell-icon">✦</span> <span><strong>Magia Pesada:</strong> Experiencias WebGL & 3D (Opcional).</span>
+              </li>
+              <li class="spell-feature">
+                <span class="spell-icon">✦</span> <span><strong>Escudos Sagrados:</strong> Seguridad perimetral y complianza legal de datos.</span>
+              </li>
+              <li class="spell-feature">
+                <span class="spell-icon">✦</span> <span><strong>Mentoria Archimalo:</strong> Consultoría técnica arquitectónica.</span>
+              </li>
+              <li class="spell-feature">
+                <span class="spell-icon">✦</span> <span><strong>PACTO 24/7:</strong> Soporte prioritario y monitorización continua.</span>
+              </li>
+            </ul>
+            
+            <a href="contacto.html?service=enterprise" class="btn-magical btn-crystal">Invocar Arquitectura</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <!-- FOOTER GOD-TIER -->
+  <footer class="footer-advanced">
+    <div class="footer-marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>DISPONIBLE PARA PROYECTOS ÉPICOS ✦ DANIEL FELIPE ✦ </span>
+        <span>DISPONIBLE PARA PROYECTOS ÉPICOS ✦ DANIEL FELIPE ✦ </span>
+      </div>
+    </div>
+    
+    <div class="container xl footer-grid">
+      <div class="footer-col brand-col">
+        <h2 class="footer-logo">DANIEL FELIPE</h2>
+        <div class="local-time-widget">
+          <span class="pulse-dot"></span>
+          <span>Local (BOG): <strong id="fw-time">--:--</strong></span>
+        </div>
+        <p class="footer-slogan">Escalando negocios con código puro y diseño de retención profunda.</p>
+      </div>
+      
+      <div class="footer-col links-col">
+        <h3>Navegación</h3>
+        <ul>
+          <li><a href="index.html" class="footer-link">Inicio</a></li>
+          <li><a href="servicios.html" class="footer-link">Servicios</a></li>
+          <li><a href="propuestas.html" class="footer-link">Propuestas</a></li>
+          <li><a href="portafolio.html" class="footer-link">Portafolio</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col social-col">
+        <h3>Social</h3>
+        <ul>
+          <li><a href="#" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a></li>
+          <li><a href="#" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a></li>
+          <li><a href="#" target="_blank" rel="noopener noreferrer" class="footer-link">Instagram</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col action-col">
+        <h3>Contacto Rápido</h3>
+        <button class="btn-copy-email" id="btn-copy-email" data-email="fajardodaniel14@gmail.com" aria-label="Copiar correo electrónico">
+          <span id="copy-email-text">fajardodaniel14@gmail.com</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="margin-left:8px;"><path d="M16 1H4C2.9 1 2 1.9 2 3v14h2V3h12V1zm3 4H8C6.9 4 6 4.9 6 6v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H8V6h11v14z"/></svg>
+        </button>
+        <a href="contacto.html" class="btn btn-primary" style="margin-top: 1rem; width: 100%; border-radius: 50px; text-align: center; padding:0.8rem; font-weight:600; font-family:var(--font-family-mono); box-sizing:border-box; display:block;">Agendar Proyecto</a>
+      </div>
+    </div>
+    
+    <div class="footer-bottom container xl">
+      <p>&copy; 2026 Daniel Felipe Fajardo. Reservados todos los derechos.</p>
+      <button class="back-to-top" id="back-to-top" aria-label="Volver arriba">↑</button>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

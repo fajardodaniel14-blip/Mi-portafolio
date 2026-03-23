@@ -1,0 +1,262 @@
+/* Advanced Minimalist Grid (Adham Dannaway Architecture) */
+.portfolio-section {
+  padding: var(--spacing-2xl) 0;
+  background-color: var(--color-bg-base);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dannaway Style is totally clean, no glowing orbs in the background, pure focus on content */
+
+.portfolio-section .container {
+  position: relative;
+  z-index: var(--z-base);
+}
+
+.portfolio-section .section-title {
+  text-align: left;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-lg);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+/* Portfolio Filters - minimalist pill */
+.portfolio-filter {
+  margin-bottom: var(--spacing-xl);
+  display: flex;
+  justify-content: flex-start; /* Align left */
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.filter-btn {
+  background: transparent;
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.filter-btn:hover {
+  color: var(--color-text-primary);
+  border-color: var(--color-text-secondary);
+}
+
+.filter-btn.active {
+  background: var(--color-text-primary);
+  color: var(--color-bg-base);
+  border-color: var(--color-text-primary);
+}
+
+/* Portfolio Grid - Two massive columns for desktop */
+.portfolio-grid {
+  display: grid;
+  gap: 4rem 2.5rem; /* huge gap for whitespace breathing */
+  grid-template-columns: 1fr;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Portfolio Card - Borderless Focus */
+.portfolio-card {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  cursor: pointer;
+}
+
+.portfolio-card[data-hidden="true"] {
+  display: none;
+}
+
+.portfolio-card.animating {
+  opacity: 0;
+  transform: scale(0.98);
+}
+
+.portfolio-card:hover {
+  transform: translateY(0); /* No card transform, we transform the image wrapper */
+}
+
+/* Portfolio Image Wrapper - Massive and Soft Rounded */
+.portfolio-card__image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--spacing-md);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle base shadow */
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s ease;
+}
+
+.portfolio-card:hover .portfolio-card__image-wrapper {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); /* Massive diffuse shadow */
+}
+
+.portfolio-card__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+  background: var(--color-bg-surface); /* Clean slate */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-card:hover .portfolio-card__image {
+  transform: scale(1.03); /* Subtle internal zoom */
+}
+
+/* Overlay / Gradient is removed for cleaner look, only active if wanted */
+.portfolio-card__overlay {
+  display: none;
+}
+
+/* SVGs styling for placeholders */
+.portfolio-card__image svg {
+  width: 80px;
+  height: 80px;
+  fill: var(--color-text-secondary);
+  opacity: 0.5;
+  transition: all var(--transition-normal);
+}
+
+.portfolio-card:hover .portfolio-card__image svg {
+  fill: var(--color-primary);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Portfolio Content - Bleeds directly into background */
+.portfolio-card__content {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-card__title {
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.01em;
+}
+
+/* Minimal description */
+.portfolio-card__description {
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: var(--spacing-sm);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Minimal Tags */
+.portfolio-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  margin-bottom: 0; /* Keep it tight */
+}
+
+.portfolio-card__tag {
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  padding: 0;
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-medium);
+}
+
+.portfolio-card__tag:not(:last-child)::after {
+  content: '·';
+  margin-left: var(--spacing-xs);
+  color: var(--color-text-muted);
+}
+
+/* Arrow interaction replacing the traditional link text */
+.portfolio-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 1.5rem;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  font-size: 0.95rem;
+  font-family: var(--font-family-mono);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.portfolio-card__link span {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover .portfolio-card__link {
+  color: var(--color-text-primary);
+}
+
+.portfolio-card:hover .portfolio-card__link span {
+  transform: translateX(6px);
+}
+
+/* El secreto de Accesibilidad: Link Estirado (Stretched Link) */
+/* Causa que toda la tarjeta reaccione al clic hacia el html destino */
+.portfolio-card__link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  cursor: pointer;
+}
+
+/* Intersection Observer Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.9s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}

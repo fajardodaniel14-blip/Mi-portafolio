@@ -1,0 +1,449 @@
+/* LIGHT LUXURY THEME VARIABLES */
+:root {
+  --lux-bg: #f8f9fa;
+  --lux-surface: #ffffff;
+  --lux-text: #0f172a;
+  --lux-text-muted: #64748b;
+  --lux-accent: #cda873; /* Golden luxury */
+  --lux-accent-hover: #b3915f;
+  --lux-border: rgba(15, 23, 42, 0.05);
+}
+
+body.luxury-theme {
+  background-color: var(--lux-bg);
+  color: var(--lux-text);
+}
+
+body.luxury-theme h1, body.luxury-theme h2, body.luxury-theme h3 {
+  font-family: 'Playfair Display', serif;
+  color: var(--lux-text);
+}
+
+body.luxury-theme p {
+  color: var(--lux-text-muted);
+}
+
+/* NAVBAR LIGHT OVERRIDE */
+body.luxury-theme .header {
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid var(--lux-border);
+}
+body.luxury-theme .header__logo, 
+body.luxury-theme .header__link {
+  color: var(--lux-text);
+}
+body.luxury-theme .header__link:hover {
+  color: var(--lux-accent);
+}
+
+/* HERO SECTION (Provocative) */
+.hero-luxury {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white; 
+  overflow: hidden;
+}
+
+.hero-luxury::after {
+  content: '';
+  position: absolute;
+  top:0; left:0; width:100%; height:100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 100%);
+  z-index: 1;
+}
+
+.hero-luxury-bg {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  transform: scale(1.03); 
+}
+
+.hero-luxury-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  padding: 0 2rem;
+}
+
+.lux-title {
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-weight: 400;
+  letter-spacing: -2px;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  color: #fff !important; 
+  text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+.lux-subtitle {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  color: rgba(255,255,255,0.9) !important;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  font-family: var(--font-family-sans);
+}
+
+/* FLOATING SOCIAL WIDGETS (eXp Colombia Style) */
+.floating-social-widget {
+  position: fixed;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 999;
+}
+
+.lux-float-btn {
+  width: 55px;
+  height: 55px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.2);
+}
+
+.lux-float-btn:hover {
+  background: var(--lux-accent);
+  border-color: var(--lux-accent);
+  color: white;
+  transform: scale(1.1) translateX(-8px);
+  box-shadow: 0 20px 40px -10px rgba(205, 168, 115, 0.4);
+}
+
+/* PROVOCATIVE GRID (Anywhere.re structure) */
+.lux-properties {
+  padding: 10rem 0;
+  background: var(--lux-surface);
+}
+
+.section-label {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 0.8rem;
+  color: var(--lux-accent);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.lux-section-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 4rem;
+  line-height: 1.2;
+}
+
+.lux-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 3rem;
+}
+
+.lux-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  group: hover;
+}
+
+.lux-card-img-wrapper {
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  background: #eee;
+}
+
+.lux-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lux-card:hover img {
+  transform: scale(1.08); /* Provocative zoom */
+}
+
+.lux-card-info {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.lux-card-title {
+  font-size: 1.4rem;
+  margin-bottom: 0.3rem;
+}
+
+.lux-price {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--lux-accent);
+  font-family: var(--font-family-mono);
+}
+
+.lux-meta {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--lux-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 0.8rem;
+}
+
+/* =======================================
+   IMMERSIVE AD FOOTER (eXp Strategy)
+   ======================================= */
+.immersive-cta-section {
+  padding: 4rem 0 8rem;
+  background: var(--lux-surface);
+}
+
+.immersive-cta-box {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 5rem 3rem;
+  text-align: center;
+  box-shadow: 0 40px 100px -20px rgba(0,0,0,0.1);
+  transform: translateY(4rem); /* Solapa el footer como en revistas lujosas */
+  z-index: 10;
+}
+
+.cta-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(135deg, rgba(8,12,24,0.96), rgba(8,12,24,0.7));
+  z-index: 1;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-content h2 {
+  color: white;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  margin-bottom: 1.2rem;
+}
+
+.cta-content p {
+  color: rgba(255,255,255,0.7);
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+  font-family: var(--font-family-sans);
+}
+
+.cta-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.lux-input {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border-radius: 5px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.05);
+  color: white;
+  font-family: var(--font-family-sans);
+  outline: none;
+  backdrop-filter: blur(10px);
+}
+.lux-input::placeholder { color: rgba(255,255,255,0.5); }
+.lux-input:focus { border-color: var(--lux-accent); }
+
+.lux-submit {
+  border-radius: 5px;
+  padding: 1rem 2.5rem;
+  background: var(--lux-accent);
+  border-color: var(--lux-accent);
+  font-family: var(--font-family-mono);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.lux-submit:hover {
+  box-shadow: 0 10px 20px rgba(205, 168, 115, 0.3);
+}
+
+/* Custom Inmobiliaria Footer Dark-Tone */
+.footer-inmobiliaria {
+  background: #080c18; /* Profundidad inmersiva Dark Navy */
+  color: white;
+  padding: 10rem 0 3rem; /* Extra padding top para el CTA superpuesto */
+  position: relative;
+  z-index: 1;
+}
+
+.footer-inmobiliaria h2, .footer-inmobiliaria h3 {
+  color: white;
+}
+
+.footer-grid-inmobiliaria {
+  display: grid;
+  grid-template-columns: 1.5fr 1.5fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+@media(max-width: 900px){
+  .footer-grid-inmobiliaria {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .cta-actions { flex-direction: column; }
+}
+
+.lux-logo {
+  font-size: 2rem;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.agent-bio {
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  max-width: 350px;
+}
+
+.agent-profile {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.agent-avatar {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--lux-accent);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.agent-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.agent-info strong {
+  font-size: 1.15rem;
+  letter-spacing: 1px;
+  font-family: "Playfair Display", serif;
+}
+
+.agent-info span {
+  color: var(--lux-accent);
+  font-size: 0.8rem;
+  font-family: var(--font-family-mono);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 0.2rem;
+}
+
+.footer-insta-col h3, .footer-links-col h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+  font-family: var(--font-family-sans);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-insta-col p {
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.insta-item {
+  display: block;
+  border-radius: 6px;
+  overflow: hidden;
+  aspect-ratio: 1;
+}
+
+.insta-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.insta-item:hover img {
+  transform: scale(1.15);
+}
+
+.footer-links-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links-col li {
+  margin-bottom: 1rem;
+}
+
+.footer-links-col a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-family: var(--font-family-sans);
+}
+
+.footer-links-col a:hover {
+  color: var(--lux-accent);
+}
+
+.footer-bottom-inmobiliaria {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.4);
+  font-family: var(--font-family-sans);
+  font-size: 0.85rem;
+}
+
+.footer-legal {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.footer-legal a {
+  color: inherit;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.footer-legal a:hover {
+  color: white;
+}

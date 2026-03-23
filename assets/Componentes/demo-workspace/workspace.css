@@ -1,0 +1,290 @@
+/* =========================================
+   WORKSPACE MiPyMEs THEME (Zenith Inspired)
+   ========================================= */
+:root {
+  --wk-bg: #f8f9fa; /* Light grey Google-like background */
+  --wk-surface: #ffffff;
+  --wk-primary: #1a73e8; /* Corporate Trust Blue */
+  --wk-primary-hover: #1557b0;
+  --wk-text-main: #202124;
+  --wk-text-muted: #5f6368;
+  --wk-border: #dadce0;
+  --wk-success: #1e8e3e;
+  --wk-warning: #f9ab00;
+  --wk-danger: #d93025;
+  --wk-font: 'Inter', -apple-system, sans-serif;
+  --wk-shadow: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+  --wk-radius: 8px;
+}
+
+body.workspace-theme {
+  background-color: var(--wk-bg);
+  color: var(--wk-text-main);
+  font-family: var(--wk-font);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* =======================================
+   SIDEBAR (Herramientas de Control)
+   ======================================= */
+.wk-sidebar {
+  width: 250px;
+  background: var(--wk-surface);
+  border-right: 1px solid var(--wk-border);
+  display: flex;
+  flex-direction: column;
+}
+
+.wk-logo {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--wk-text-main);
+  border-bottom: 1px solid var(--wk-border);
+  gap: 8px;
+}
+.wk-logo svg { width: 24px; height: 24px; fill: var(--wk-primary); }
+
+.wk-nav {
+  padding: 16px 8px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wk-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+  border-radius: 0 24px 24px 0;
+  color: var(--wk-text-main);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+.wk-nav-btn svg { width: 20px; height: 20px; fill: var(--wk-text-muted); }
+
+.wk-nav-btn:hover { background: #f1f3f4; }
+.wk-nav-btn.active {
+  background: #e8f0fe;
+  color: var(--wk-primary);
+}
+.wk-nav-btn.active svg { fill: var(--wk-primary); }
+
+/* =======================================
+   MAIN CONTENT AREA
+   ======================================= */
+.wk-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.wk-header {
+  height: 64px;
+  background: var(--wk-surface);
+  border-bottom: 1px solid var(--wk-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.wk-search {
+  background: #f1f3f4;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  width: 400px;
+}
+.wk-search input {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding-left: 10px;
+  font-size: 0.95rem;
+  color: var(--wk-text-main);
+}
+.wk-search svg { width: 20px; height: 20px; fill: var(--wk-text-muted); }
+
+.wk-header-actions { display: flex; align-items: center; gap: 20px; }
+.wk-avatar {
+  background: var(--wk-primary);
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* =======================================
+   WORKSPACE GRID (Easy Operation)
+   ======================================= */
+.wk-content-wrapper { padding: 32px; }
+
+.wk-greeting { margin: 0 0 24px 0; font-size: 1.8rem; font-weight: 400; }
+.wk-greeting span { color: var(--wk-primary); font-weight: 600; }
+
+.wk-quick-actions {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.wk-action-card {
+  background: var(--wk-surface);
+  border: 1px solid var(--wk-border);
+  border-radius: var(--wk-radius);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--wk-text-main);
+  transition: box-shadow 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+.wk-action-card:hover {
+  box-shadow: var(--wk-shadow);
+  transform: translateY(-2px);
+  border-color: transparent;
+}
+.wk-action-card svg { width: 32px; height: 32px; fill: var(--wk-primary); }
+.wk-action-title { font-weight: 500; font-size: 0.95rem; }
+
+/* =======================================
+   GUÍA TÉCNICA DE FUNCIONALIDAD (Prompt Requisito)
+   ======================================= */
+.wk-guide-section {
+  background: var(--wk-surface);
+  border-radius: var(--wk-radius);
+  border: 1px solid var(--wk-border);
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+
+.wk-guide-header {
+  background: #e8f0fe;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--wk-border);
+}
+.wk-guide-header h2 {
+  margin: 0 0 8px 0;
+  color: var(--wk-primary);
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.wk-guide-header p {
+  margin: 0;
+  color: var(--wk-text-muted);
+  font-size: 0.95rem;
+}
+
+.wk-guide-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 24px;
+  gap: 24px;
+}
+
+.wk-guide-step {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.wk-step-badge {
+  background: var(--wk-primary);
+  color: white;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: bold; font-size: 0.85rem;
+}
+.wk-step-title { font-weight: 600; font-size: 1rem; color: var(--wk-text-main); margin: 0; }
+.wk-step-desc { font-size: 0.9rem; color: var(--wk-text-muted); line-height: 1.5; margin: 0; }
+
+/* =======================================
+   ACTIVE USERS / CLOUD STORAGE PANEL
+   ======================================= */
+.wk-panels-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+
+.wk-panel {
+  background: var(--wk-surface);
+  border: 1px solid var(--wk-border);
+  border-radius: var(--wk-radius);
+}
+.wk-panel-header {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--wk-border);
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wk-panel-header a { color: var(--wk-primary); font-size: 0.85rem; text-decoration: none; }
+.wk-panel-body { padding: 0; }
+
+.wk-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  border-bottom: 1px solid #f1f3f4;
+}
+.wk-list-item:last-child { border-bottom: none; }
+
+.wk-user-info { display: flex; align-items: center; gap: 12px; }
+.wk-user-avatar { width: 36px; height: 36px; border-radius: 50%; background: #e8eaed; display: flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: bold; color: var(--wk-text-muted); }
+.wk-user-name { font-weight: 500; font-size: 0.95rem; margin: 0; }
+.wk-user-email { font-size: 0.8rem; color: var(--wk-text-muted); margin: 0; }
+.wk-user-status { font-size: 0.8rem; font-weight: bold; padding: 4px 8px; border-radius: 12px; }
+.wk-status-active { background: #e6f4ea; color: var(--wk-success); }
+.wk-status-pending { background: #fef7e0; color: var(--wk-warning); }
+
+/* Utility Button */
+.wk-back-btn {
+  background: transparent;
+  border: 1px solid var(--wk-border);
+  color: var(--wk-text-muted);
+  padding: 6px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.wk-back-btn:hover { background: #f1f3f4; color: var(--wk-text-main); }
